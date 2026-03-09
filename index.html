@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soujanya Pasumarthi | AI & Analytics Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #0f172a;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-2: rgba(30, 41, 59, 0.72);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: rgba(255,255,255,0.1);
+      --cyan: #22d3ee;
+      --cyan-2: #06b6d4;
+      --violet: #a855f7;
+      --emerald: #34d399;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,0.15), transparent 24%),
+        radial-gradient(circle at top right, rgba(168,85,247,0.18), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(16,185,129,0.12), transparent 18%),
+        linear-gradient(180deg, #020617 0%, #0b1220 34%, #020617 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 72px 0; }
+    .section-tight { padding: 56px 0; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(34,211,238,0.25);
+      border-radius: 999px;
+      background: rgba(34,211,238,0.08);
+      color: #c6f7ff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .blob, .blob2, .blob3 {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(72px);
+      opacity: 0.26;
+      pointer-events: none;
+    }
+    .blob { width: 280px; height: 280px; background: var(--cyan); top: 40px; left: -70px; }
+    .blob2 { width: 320px; height: 320px; background: var(--violet); top: 0; right: -80px; }
+    .blob3 { width: 240px; height: 240px; background: var(--emerald); bottom: -80px; left: 32%; }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      padding: 84px 0 72px;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+
+    .hero .role {
+      margin-top: 18px;
+      font-size: clamp(20px, 2.7vw, 30px);
+      font-weight: 700;
+      color: #baf3ff;
+    }
+
+    .hero .intro {
+      margin-top: 22px;
+      max-width: 760px;
+      font-size: 17px;
+      color: #cbd5e1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+      color: #082f49;
+      box-shadow: 0 10px 25px rgba(34, 211, 238, 0.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--line);
+      color: #fff;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    .side-card {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .side-card h3, .card-title, .section h2 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .meta-block + .meta-block { margin-top: 16px; }
+    .meta-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+    .meta-text { color: var(--muted); font-size: 14px; }
+
+    .value-card {
+      background: linear-gradient(135deg, rgba(34,211,238,0.08), rgba(168,85,247,0.12));
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      padding: 28px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #9eeaf6;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(2,6,23,0.56);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .projects-wrap {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .project-card {
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      background: rgba(2, 6, 23, 0.7);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34,211,238,0.22);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(34,211,238,0.12);
+      color: var(--cyan);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .tag {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: #cbd5e1;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      margin: 12px 0 0;
+    }
+
+    .mini-title {
+      margin-top: 16px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(34,211,238,0.1);
+      border: 1px solid rgba(34,211,238,0.18);
+      color: #c6f7ff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .project-actions { margin-top: 18px; }
+
+    .btn-project {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+    .btn-project:hover { background: rgba(255,255,255,0.1); }
+
+    .timeline-box {
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      background: linear-gradient(90deg, rgba(15,23,42,0.95), rgba(30,41,59,0.92));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-top: 12px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.03);
+    }
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 13px;
+      right: -12px;
+      height: 2px;
+      background: rgba(255,255,255,0.12);
+    }
+    .timeline-item:last-child::after { display: none; }
+
+    .timeline-year {
+      margin-top: 14px;
+      color: #baf3ff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .timeline-label {
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .career-contact {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-list p {
+      margin: 8px 0;
+      color: #cbd5e1;
+      word-break: break-word;
+    }
+    .contact-list span { color: #fff; font-weight: 700; }
+    .contact-list a { color: #99f6e4; }
+    .contact-list a:hover { color: #ccfbf1; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 26px 16px 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .two-col,
+      .career-contact {
+        grid-template-columns: 1fr;
+      }
+      .skills-grid,
+      .projects-grid,
+      .timeline-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .hero-grid { padding: 64px 0 52px; }
+      .skills-grid,
+      .projects-grid,
+      .timeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .card,
+      .project-card,
+      .timeline-box,
+      .side-card { padding: 22px; }
+      .container { width: min(var(--max), calc(100% - 22px)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="blob"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">✦ AI & Analytics Portfolio</div>
+        <h1>Soujanya Pasumarthi</h1>
+        <div class="role">Analytics Engineer | Future Generative AI Engineer</div>
+        <p class="intro">
+          I am an Analytics Engineer with experience in enterprise analytics, data-driven problem solving, and emerging AI technologies. With a professional background shaped by consulting work in environments such as Accenture in India, I focus on transforming complex data into meaningful insights that support better business decisions. My current direction centers on machine learning, deep learning, prompt engineering, generative AI, retrieval-augmented generation, and agentic AI systems.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="glass side-card">
+          <h3>Professional Snapshot</h3>
+          <div class="meta-block">
+            <div class="meta-label">Education</div>
+            <div class="meta-text">Bachelor’s in Information Technology, India</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Current Focus</div>
+            <div class="meta-text">Generative AI, RAG, agentic AI frameworks, and AI-powered analytics</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Career Goal</div>
+            <div class="meta-text">Become a Generative AI Engineer building intelligent, scalable AI applications</div>
+          </div>
+        </div>
+
+        <div class="glass side-card value-card">
+          <h3>Value Proposition</h3>
+          <p class="meta-text" style="margin-top:12px; color:#dbeafe; line-height:1.8;">
+            I combine enterprise analytics experience with modern AI capabilities to build solutions that turn data into action. My value lies in bridging analytics, business understanding, and generative AI to create systems that are practical, scalable, and aligned with real-world decision-making.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="glass card">
+        <div class="section-label">About Me</div>
+        <h2>Professional Background</h2>
+        <p>
+          My background is rooted in analytics and enterprise data work, where I learned how business problems, data workflows, and reporting systems come together to support strategy. That experience strengthened my ability to think both technically and practically.
+        </p>
+        <p>
+          As I continued learning, I became especially interested in artificial intelligence and how it can move beyond analysis into intelligent assistance, automation, and decision support. That interest led me to study machine learning, deep learning, prompt engineering, generative AI, RAG, and agentic AI frameworks.
+        </p>
+        <p>
+          I am now building toward a career as a Generative AI Engineer, with a focus on creating AI assistants, copilots, and knowledge-driven systems that help people work smarter.
+        </p>
+      </div>
+
+      <div class="glass card">
+        <div class="section-label">Core Expertise</div>
+        <h2>Skills & Focus Areas</h2>
+        <div class="skills-grid">
+          <div class="skill">Analytics Engineering</div>
+          <div class="skill">Machine Learning</div>
+          <div class="skill">Deep Learning</div>
+          <div class="skill">Prompt Engineering</div>
+          <div class="skill">Generative AI</div>
+          <div class="skill">RAG</div>
+          <div class="skill">Agentic AI Frameworks</div>
+          <div class="skill">AI-assisted Analytics</div>
+          <div class="skill">Data Storytelling</div>
+          <div class="skill">Business Intelligence</div>
+          <div class="skill">Research Synthesis</div>
+          <div class="skill">Solution Design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects-wrap">
+    <div class="container">
+      <div class="section-label">Featured Work</div>
+      <h2>Portfolio Projects</h2>
+      <p style="max-width:760px; color:#cbd5e1; margin-top:12px;">
+        These projects reflect my growth across AI research, chatbot design, custom GPT evaluation, and visual storytelling. Each artifact demonstrates how I combine analytics thinking with practical AI applications.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <div class="icon-box">⌁</div>
+            <div class="tag">Research + Visualization</div>
+          </div>
+          <h3>Evolution of Artificial Intelligence Timeline</h3>
+          <p>
+            A digital timeline tracing AI from the Turing Test and Dartmouth Conference to deep learning, transformers, and generative AI.
+          </p>
+          <div class="mini-title">Objective</div>
+          <p>Research and present major milestones, AI winters, and the breakthroughs driven by deep learning and cloud computing.</p>
+          <div class="mini-title">Tools</div>
+          <div class="chips">
+            <span class="chip">PowerPoint</span>
+            <span class="chip">Presentation Design</span>
+            <span class="chip">AI Research</span>
+            <span class="chip">Timeline Storytelling</span>
+          </div>
+          <div class="mini-title">Value</div>
+          <p>Shows my ability to synthesize technical history, organize research clearly, and communicate complex AI concepts visually.</p>
+          <div class="project-actions">
+            <a class="btn-project" href="#timeline">View AI Timeline Section →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div class="icon-box">🤖</div>
+            <div class="tag">Conversational AI</div>
+          </div>
+          <h3>Career Guidance AI Chatbot</h3>
+          <p>
+            A domain-focused chatbot designed to answer career-related questions using a defined knowledge base and structured prompting.
+          </p>
+          <div class="mini-title">Objective</div>
+          <p>Create a text-based career guidance assistant that responds only to relevant questions and guides users with clear answers and follow-ups.</p>
+          <div class="mini-title">Tools</div>
+          <div class="chips">
+            <span class="chip">Chatbase</span>
+            <span class="chip">Prompt Design</span>
+            <span class="chip">Knowledge Base Setup</span>
+            <span class="chip">Conversation Flow</span>
+          </div>
+          <div class="mini-title">Value</div>
+          <p>Demonstrates how I design AI assistants around audience needs, scope control, and practical user interaction.</p>
+          <div class="project-actions">
+            <a class="btn-project" href="https://www.chatbase.co/vcvT-hKJsmxL-SKtTPA3D/help" target="_blank" rel="noreferrer">Open Career Guidance Chatbot →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div class="icon-box">📊</div>
+            <div class="tag">Custom GPT Evaluation</div>
+          </div>
+          <h3>Custom GPT for Data Analytics Learning</h3>
+          <p>
+            An exploration of how a custom GPT can teach sales trend analysis, business reasoning, and chart selection through prompt refinement.
+          </p>
+          <div class="mini-title">Objective</div>
+          <p>Evaluate how effectively a custom GPT explains analytics concepts and adapts explanations for a beginner audience.</p>
+          <div class="mini-title">Tools</div>
+          <div class="chips">
+            <span class="chip">Custom GPT</span>
+            <span class="chip">Prompt Engineering</span>
+            <span class="chip">Analytics Reasoning</span>
+            <span class="chip">Business Interpretation</span>
+          </div>
+          <div class="mini-title">Value</div>
+          <p>Highlights my ability to test AI systems critically, improve outputs through prompting, and connect AI tools to analytics education.</p>
+          <div class="project-actions">
+            <a class="btn-project" href="https://chatgpt.com/share/69ac5a3e-1620-8010-8571-781d296fed7b" target="_blank" rel="noreferrer">Open Custom GPT →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div class="icon-box">✧</div>
+            <div class="tag">Research + Analysis</div>
+          </div>
+          <h3>AI Research Exploration Project</h3>
+          <p>
+            A research-focused artifact centered on understanding emerging AI tools, their capabilities, and their limitations in real-world use.
+          </p>
+          <div class="mini-title">Objective</div>
+          <p>Study how AI systems support learning, information retrieval, reasoning, and innovation across different use cases.</p>
+          <div class="mini-title">Tools</div>
+          <div class="chips">
+            <span class="chip">Generative AI Tools</span>
+            <span class="chip">Research Synthesis</span>
+            <span class="chip">Analytical Writing</span>
+            <span class="chip">Comparative Evaluation</span>
+          </div>
+          <div class="mini-title">Value</div>
+          <p>Reflects my growing expertise in evaluating AI technologies thoughtfully rather than using them as black boxes.</p>
+          <div class="project-actions">
+            <a class="btn-project" href="#contact">Available on request →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section-tight">
+    <div class="container">
+      <div class="section-label">AI Perspective</div>
+      <h2>AI Milestone Snapshot</h2>
+      <p style="max-width:780px; color:#cbd5e1; margin-top:12px;">
+        A quick visual reference inspired by my AI timeline project, showing how major breakthroughs shaped the field from theory to mainstream generative AI.
+      </p>
+      <div class="timeline-box" style="margin-top:24px;">
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <div class="timeline-year">1950</div>
+            <div class="timeline-label">Turing Test</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1956</div>
+            <div class="timeline-label">Dartmouth Conference</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1974–80</div>
+            <div class="timeline-label">AI Winter #1</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1987–93</div>
+            <div class="timeline-label">AI Winter #2</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-label">AlexNet</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-label">Transformers</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-label">ChatGPT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container career-contact">
+      <div class="glass card">
+        <div class="section-label">Career Direction</div>
+        <h2>What I’m Building Toward</h2>
+        <p>
+          My goal is to become a Generative AI Engineer who builds AI copilots, assistants, and retrieval-driven systems that combine data, language models, and business context. I am especially interested in creating solutions that are not only technically capable, but also useful, understandable, and aligned with real-world needs.
+        </p>
+      </div>
+
+      <div id="contact" class="glass card">
+        <div class="section-label">Contact</div>
+        <h2>Let’s Connect</h2>
+        <div class="contact-list">
+          <p><span>Name:</span> Soujanya Pasumarthi</p>
+          <p><span>Role:</span> Analytics Engineer</p>
+          <p><span>Email:</span> <a href="mailto:soujanyach2510@gmail.com">soujanyach2510@gmail.com</a></p>
+          <p><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/soujanya-pasumarthi" target="_blank" rel="noreferrer">linkedin.com/in/soujanya-pasumarthi</a></p>
+          <p><span>GitHub:</span> <a href="https://github.com/soujanyach2510/soujanyapasumarthi.github.io" target="_blank" rel="noreferrer">github.com/soujanyach2510/soujanyapasumarthi.github.io</a></p>
+          <p><span>Focus:</span> Analytics, AI, and Generative AI Engineering</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Soujanya Pasumarthi · AI & Analytics Portfolio
+  </footer>
+</body>
+</html>
