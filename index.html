@@ -314,7 +314,12 @@
       font-weight: 600;
     }
 
-    .project-actions { margin-top: 18px; }
+    .project-actions { 
+      margin-top: 18px; 
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
     .btn-project {
       display: inline-flex;
@@ -384,6 +389,23 @@
       margin-top: 4px;
     }
 
+    .document-viewer {
+      margin-top: 26px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: rgba(2, 6, 23, 0.7);
+    }
+
+    .document-viewer iframe {
+      width: 100%;
+      height: 720px;
+      border: none;
+      display: block;
+      background: #fff;
+    }
+
     .career-contact {
       display: grid;
       grid-template-columns: 1fr 0.8fr;
@@ -419,6 +441,10 @@
       .timeline-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .document-viewer iframe {
+        height: 560px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -434,6 +460,10 @@
       .timeline-box,
       .side-card { padding: 22px; }
       .container { width: min(var(--max), calc(100% - 22px)); }
+
+      .document-viewer iframe {
+        height: 420px;
+      }
     }
   </style>
 </head>
@@ -525,7 +555,7 @@
       <div class="section-label">Featured Work</div>
       <h2>Portfolio Projects</h2>
       <p style="max-width:760px; color:#cbd5e1; margin-top:12px;">
-        These projects reflect my growth across AI research, chatbot design, custom GPT evaluation, and visual storytelling. Each artifact demonstrates how I combine analytics thinking with practical AI applications.
+        These projects reflect my growth across AI research, chatbot design, and visual storytelling. Each artifact demonstrates how I combine analytics thinking with practical AI applications.
       </p>
 
       <div class="projects-grid">
@@ -536,7 +566,7 @@
           </div>
           <h3>Evolution of Artificial Intelligence Timeline</h3>
           <p>
-            A digital timeline tracing AI from the Turing Test and Dartmouth Conference to deep learning, transformers, and generative AI.
+            A presentation tracing AI from the Turing Test and Dartmouth Conference to deep learning, transformers, and generative AI.
           </p>
           <div class="mini-title">Objective</div>
           <p>Research and present major milestones, AI winters, and the breakthroughs driven by deep learning and cloud computing.</p>
@@ -551,6 +581,7 @@
           <p>Shows my ability to synthesize technical history, organize research clearly, and communicate complex AI concepts visually.</p>
           <div class="project-actions">
             <a class="btn-project" href="#timeline">View AI Timeline Section →</a>
+            <a class="btn-project" href="files/AI_Timeline.pdf" target="_blank" rel="noreferrer">Open Timeline Document ↗</a>
           </div>
         </article>
 
@@ -578,56 +609,6 @@
             <a class="btn-project" href="https://www.chatbase.co/vcvT-hKJsmxL-SKtTPA3D/help" target="_blank" rel="noreferrer">Open Career Guidance Chatbot →</a>
           </div>
         </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <div class="icon-box">📊</div>
-            <div class="tag">Custom GPT Evaluation</div>
-          </div>
-          <h3>Custom GPT for Data Analytics Learning</h3>
-          <p>
-            An exploration of how a custom GPT can teach sales trend analysis, business reasoning, and chart selection through prompt refinement.
-          </p>
-          <div class="mini-title">Objective</div>
-          <p>Evaluate how effectively a custom GPT explains analytics concepts and adapts explanations for a beginner audience.</p>
-          <div class="mini-title">Tools</div>
-          <div class="chips">
-            <span class="chip">Custom GPT</span>
-            <span class="chip">Prompt Engineering</span>
-            <span class="chip">Analytics Reasoning</span>
-            <span class="chip">Business Interpretation</span>
-          </div>
-          <div class="mini-title">Value</div>
-          <p>Highlights my ability to test AI systems critically, improve outputs through prompting, and connect AI tools to analytics education.</p>
-          <div class="project-actions">
-            <a class="btn-project" href="https://chatgpt.com/share/69ac5a3e-1620-8010-8571-781d296fed7b" target="_blank" rel="noreferrer">Open Custom GPT →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <div class="icon-box">✧</div>
-            <div class="tag">Research + Analysis</div>
-          </div>
-          <h3>AI Research Exploration Project</h3>
-          <p>
-            A research-focused artifact centered on understanding emerging AI tools, their capabilities, and their limitations in real-world use.
-          </p>
-          <div class="mini-title">Objective</div>
-          <p>Study how AI systems support learning, information retrieval, reasoning, and innovation across different use cases.</p>
-          <div class="mini-title">Tools</div>
-          <div class="chips">
-            <span class="chip">Generative AI Tools</span>
-            <span class="chip">Research Synthesis</span>
-            <span class="chip">Analytical Writing</span>
-            <span class="chip">Comparative Evaluation</span>
-          </div>
-          <div class="mini-title">Value</div>
-          <p>Reflects my growing expertise in evaluating AI technologies thoughtfully rather than using them as black boxes.</p>
-          <div class="project-actions">
-            <a class="btn-project" href="#contact">Available on request →</a>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -635,10 +616,15 @@
   <section id="timeline" class="section-tight">
     <div class="container">
       <div class="section-label">AI Perspective</div>
-      <h2>AI Milestone Snapshot</h2>
+      <h2>AI Timeline Project</h2>
       <p style="max-width:780px; color:#cbd5e1; margin-top:12px;">
-        A quick visual reference inspired by my AI timeline project, showing how major breakthroughs shaped the field from theory to mainstream generative AI.
+        This project presents major milestones in the evolution of artificial intelligence, from early theoretical foundations to modern generative AI systems. It reflects my ability to research, synthesize, and present technical concepts in a clear visual format.
       </p>
+
+      <div class="project-actions" style="margin-top:20px;">
+        <a class="btn-project" href="files/AI_Timeline.pdf" target="_blank" rel="noreferrer">View Full AI Timeline Document ↗</a>
+      </div>
+
       <div class="timeline-box" style="margin-top:24px;">
         <div class="timeline-grid">
           <div class="timeline-item">
@@ -670,6 +656,10 @@
             <div class="timeline-label">ChatGPT</div>
           </div>
         </div>
+      </div>
+
+      <div class="document-viewer">
+        <iframe src="files/AI_Timeline.pdf" title="AI Timeline Document"></iframe>
       </div>
     </div>
   </section>
