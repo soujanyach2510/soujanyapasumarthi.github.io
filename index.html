@@ -314,8 +314,8 @@
       font-weight: 600;
     }
 
-    .project-actions { 
-      margin-top: 18px; 
+    .project-actions {
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -389,8 +389,6 @@
       margin-top: 4px;
     }
 
-    
-
     .career-contact {
       display: grid;
       grid-template-columns: 1fr 0.8fr;
@@ -406,6 +404,14 @@
     .contact-list span { color: #fff; font-weight: 700; }
     .contact-list a { color: #99f6e4; }
     .contact-list a:hover { color: #ccfbf1; }
+
+    .section-tight .card p strong {
+      color: #ffffff;
+    }
+
+    .glass.card p {
+      max-width: 100%;
+    }
 
     footer {
       border-top: 1px solid var(--line);
@@ -426,8 +432,6 @@
       .timeline-grid {
         grid-template-columns: 1fr 1fr;
       }
-
-     
     }
 
     @media (max-width: 640px) {
@@ -443,8 +447,9 @@
       .timeline-box,
       .side-card { padding: 22px; }
       .container { width: min(var(--max), calc(100% - 22px)); }
-
-     
+      .project-card h3 {
+        font-size: 21px;
+      }
     }
   </style>
 </head>
@@ -536,7 +541,7 @@
       <div class="section-label">Featured Work</div>
       <h2>Portfolio Projects</h2>
       <p style="max-width:760px; color:#cbd5e1; margin-top:12px;">
-        These projects reflect my growth across AI research, chatbot design, and visual storytelling. Each artifact demonstrates how I combine analytics thinking with practical AI applications.
+        These projects reflect my growth across AI research, chatbot design, academic analysis, and visual storytelling. Each artifact demonstrates how I combine analytics thinking with practical AI applications.
       </p>
 
       <div class="projects-grid">
@@ -590,6 +595,36 @@
             <a class="btn-project" href="https://www.chatbase.co/vcvT-hKJsmxL-SKtTPA3D/help" target="_blank" rel="noreferrer">Open Career Guidance Chatbot →</a>
           </div>
         </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <div class="icon-box">🧠</div>
+            <div class="tag">ML + Deep Learning</div>
+          </div>
+          <h3>Machine Learning vs. Deep Learning</h3>
+          <p>
+            A comparative analysis of machine learning and deep learning using lesson-based examples, real-world applications, and practical reasoning about when each approach is most effective.
+          </p>
+          <div class="mini-title">Objective</div>
+          <p>
+            Compare one machine learning example and one deep learning example from the lesson, connect each to a real-world application, and explain why each method is suitable for the problem.
+          </p>
+          <div class="mini-title">Tools</div>
+          <div class="chips">
+            <span class="chip">Academic Writing</span>
+            <span class="chip">APA 7</span>
+            <span class="chip">AI/ML Concepts</span>
+            <span class="chip">Lesson Research</span>
+          </div>
+          <div class="mini-title">Value</div>
+          <p>
+            Demonstrates my ability to explain technical concepts clearly, compare AI approaches thoughtfully, and connect classroom learning to real-world business and technology applications.
+          </p>
+          <div class="project-actions">
+            <a class="btn-project" href="#ml-dl-artifact">View Artifact Section →</a>
+            <a class="btn-project" href="files/ML_vs_DL_Artifact.pdf" target="_blank" rel="noreferrer">View Full Report ↗</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -638,8 +673,64 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-     
+  <section id="ml-dl-artifact" class="section-tight">
+    <div class="container">
+      <div class="section-label">Artifact 2</div>
+      <h2>Machine Learning vs. Deep Learning</h2>
+      <p style="max-width:780px; color:#cbd5e1; margin-top:12px;">
+        This artifact is a written analysis comparing one traditional machine learning example and one deep learning example from the course lesson. It was revised for portfolio presentation so that the content is easier for a professional audience to follow while still demonstrating technical understanding.
+      </p>
+
+      <div class="glass card" style="margin-top:24px;">
+        <div class="mini-title" style="margin-top:0;">Project Context</div>
+        <p>
+          This report was created as part of my coursework to show that I can distinguish between machine learning and deep learning, connect them to real-world use cases, and explain why one approach may be more appropriate than another depending on the problem.
+        </p>
+
+        <div class="mini-title">Objective</div>
+        <p>
+          The goal of this artifact was to evaluate two examples from the lesson—email spam detection as a machine learning example and image recognition as a deep learning example—and explain why each approach is suitable for its specific application.
+        </p>
+
+        <div class="mini-title">Process</div>
+        <p>
+          I reviewed the lesson content on machine learning and deep learning, selected one example from each category, and then connected each example to a real-world application. After that, I compared the strengths of both approaches, focusing on factors such as feature extraction, data complexity, computational needs, and practical fit for the task.
+        </p>
+
+        <div class="mini-title">Tools & Technologies Used</div>
+        <div class="chips">
+          <span class="chip">Microsoft Word</span>
+          <span class="chip">APA 7 Formatting</span>
+          <span class="chip">Machine Learning Concepts</span>
+          <span class="chip">Deep Learning Concepts</span>
+          <span class="chip">Course Research</span>
+        </div>
+
+        <div class="mini-title">Key Examples Covered</div>
+        <p>
+          <strong>Machine Learning:</strong> Email spam detection using structured, predefined features such as word frequency, sender information, and suspicious links.
+        </p>
+        <p>
+          <strong>Deep Learning:</strong> Image recognition using convolutional neural networks to learn patterns directly from raw image data.
+        </p>
+
+        <div class="mini-title">Why This Artifact Matters</div>
+        <p>
+          This artifact reflects my ability to translate technical theory into practical understanding. It shows that I can compare AI methods critically, explain them clearly, and connect academic learning to real-world systems such as email filtering and facial recognition.
+        </p>
+
+        <div class="mini-title">Value Proposition</div>
+        <p>
+          For employers and collaborators, this work demonstrates that I do more than memorize AI terms. I can evaluate when a method is appropriate, explain trade-offs, and communicate technical ideas in a way that supports smarter business and technology decisions.
+        </p>
+
+        <div class="project-actions" style="margin-top:22px;">
+          <a class="btn-project" href="files/ML_vs_DL_Artifact.pdf" target="_blank" rel="noreferrer">Open Artifact Report ↗</a>
+        </div>
+      </div>
     </div>
   </section>
 
